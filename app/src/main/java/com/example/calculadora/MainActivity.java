@@ -115,8 +115,24 @@ import android.widget.Toast;
             if (operacao.equals("+")) {
                 int resultado = numero1 + numero2;
                 display.setText(String.valueOf(resultado));
-        }
-     } else {
+            }
+            if (operacao.equals("-")) {
+                int resultado = numero1 - numero2;
+                display.setText(String.valueOf(resultado));
+            }
+            if (operacao.equals("*")) {
+                int resultado = numero1 * numero2;
+                display.setText(String.valueOf(resultado));
+            }
+            if (operacao.equals("/")) {
+                if (numero2 != 0) {
+                    int resultado = numero1 / numero2;
+                    display.setText(String.valueOf(resultado));
+                } else {
+                    Toast.makeText(MainActivity.this, "Não é possível difidir por zero", Toast.LENGTH_LONG).show();
+                }
+            }
+        } else {
             Toast.makeText(MainActivity.this, "Operação inválida", Toast.LENGTH_LONG).show();
         }
     }
